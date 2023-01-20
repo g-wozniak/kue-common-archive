@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@intf/*": ["src/intf/*"],
+      "@routes/*": ["src/routes/*"],
+      "@models/*": ["src/models/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@properties/*": ["src/properties/*"],
+      "@root/*": ["src/*"]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".log"
+  ]
+}

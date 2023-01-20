@@ -1,0 +1,131 @@
+/*== common.scss ==*/
+/*== Common stylesheet for shared style/UI values ==*/
+
+/* Font declaration */
+
+$font1: 'Kue', sans-serif;
+$font2: 'Barlow', sans-serif;
+$font3: 'Ubuntu Mono', monospace;
+
+@mixin UI_Font($id, $weight) {
+  @if $id == primary {
+    font-family: $font1 !important;
+    @if $weight == normal {
+      font-weight: 400;
+    } @else if $weight == strong {
+      font-weight: 600;
+    } @else if $weight == bold {
+      font-weight: 600;
+    }
+  } @else if $id == secondary {
+    font-family: $font2 !important;
+    @if $weight == normal {
+      font-weight: 400;
+    } @else if $weight == bold {
+      font-weight: 600;
+    } @else if $weight == light {
+      font-weight: 200;
+    }
+  } @else if $id == monospace {
+    font-family: $font3 !important;
+    @if $weight == normal {
+      font-weight: 400;
+    } @else if $weight == bold {
+      font-weight: 700;
+    }
+  }
+}
+
+/* == Relative spaces framework == */
+
+$u: 0.5rem;
+$u_: 0.75rem;
+$_u: 0.25rem;
+$U: 1rem;
+$U_u: 1.25rem;
+$UU: 2rem;
+$Uu: 1.5rem;
+$Uu_: 1.75rem;
+$UUu: 2.5rem;
+$UUU: 3rem;
+$UUUu: 3.5rem;
+
+
+
+/* == Primary brand colors == */
+
+$UI_BRAND_BLACK: #131313;
+$UI_BRAND_VIOLET: #2a213b;
+$UI_BRAND_SNOW: #F5F4F7;
+$UI_BRAND_STORM: #6a75ec;
+$UI_BRAND_STORM_DARK: #5f69d4;
+$UI_BRAND_STORM_LIGHT: #7e87ef;
+$UI_BRAND_STORM_BRIGHT: #919bf6;
+$UI_BRAND_GLACIER: #00d5ce;
+$UI_BRAND_GLACIER_DARK: #02514f;
+$UI_BRAND_GLACIER_LIGHT: #15fff9;
+$UI_BRAND_RED_BRIGHT: #ffb6ba;
+$UI_BRAND_RED_LIGHT: #ff8f96;
+$UI_BRAND_RED: #ff3f49;
+$UI_BRAND_RED_DARK: #e53942;
+$UI_BRAND_ORANGE: #ffad00;
+$UI_BRAND_ORANGE_DARK: #e59d00;
+$UI_BRAND_YELLOW_1: #ffe100;
+$UI_BRAND_YELLOW_DARK: #e5cb00;
+
+/* == Supporting colors == */
+
+/* == Card colors == */
+
+$UI_COLOR_WHITE: #fff;
+$UI_CARD_GOAL_COLOR: #e02243;
+$UI_CARD_GOAL_COLOR_DARK: #cb1535;
+$UI_CARD_GOAL_COLOR_LIGHT: #f32348;
+$UI_CARD_CATEGORY_COLOR: $UI_BRAND_ORANGE;
+$UI_CARD_CATEGORY_COLOR_DARK: $UI_BRAND_ORANGE_DARK;
+$UI_CARD_CATEGORY_COLOR_LIGHT: #f3e67d;
+$UI_CARD_SKILL_COLOR: #6ed92d;
+$UI_CARD_SKILL_COLOR_DARK: #5db926;
+$UI_CARD_SKILL_COLOR_LIGHT: #90ea5a;
+$UI_CARD_TASK_COLOR: $UI_BRAND_STORM;
+$UI_CARD_TASK_COLOR_DARK: #9660db;
+$UI_CARD_TASK_COLOR_LIGHT: #c19af1;
+
+
+/* == Mixins == */
+
+@mixin UI_Gradient($deg, $aColor, $bColor) {
+  background: $aColor;
+  background: -moz-linear-gradient($deg, $aColor 0%, $bColor 100%);
+  background: -webkit-linear-gradient($deg, $aColor 0%, $bColor 100%);
+  background: linear-gradient($deg, $aColor 0%, $bColor 100%);
+}
+
+@mixin UI_Radial_Gradient($outerColor, $innerColor) {
+  background: $outerColor;
+  background: -moz-radial-gradient(circle, $innerColor 0%, $outerColor 100%);
+  background: -webkit-radial-gradient(circle, $innerColor 0%, $outerColor 100%);
+  background: radial-gradient(circle, $innerColor 0%, $outerColor 100%);
+}
+
+/* == Effects == */
+
+@mixin UI_Effect_Ease_Color($speed:0.3s) {
+  -webkit-transition: all $speed ease-in-out;
+  -moz-transition: all $speed ease-in-out;
+  -ms-transition: all $speed ease-in-out;
+  -o-transition: all $speed ease-in-out;
+  transition: all $speed ease-in-out;
+}
+
+/* == Animations == */
+@keyframes UI_Animate_Show_DOM_Element {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
